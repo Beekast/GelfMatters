@@ -1,27 +1,27 @@
 GELFMatters
 ===========
 
-GelfMatters is a proxy aimed at listening for GELF messages, to forward them to Slack or Mattermost. Very usefull to combined with Graylog Streams and the GELF output.
+GelfMatters is a proxy aimed at listening for GELF messages, to forward them to Slack or Mattermost. Very usefull combined with Graylog Streams and the GELF output.
 
 
 ## Configuration
-Place the configuration file in the working directory.
+Place a YAML configuration file named *gelfmatters.conf* in the working directory.
 
     server:
-      bind: 0.0.0.0  # Binding interface
-      port: 12301    # Port to listen
+      bind: 0.0.0.0
+      port: 12301
     mattermost:
-      # url to connect to mattermost, also work for slack
       url: https://mattermost.host.net/hooks/my_token
-      # Payload to send at mattermost/slack
-      # "{}" will be replaced by the value of the gelf fields defined below
       payload: "{\"username\": \"graylog\", \"text\": \"field: {}\nanother: {}\"}"
-    gelf:  # fields to extract from the gelf
+    gelf:
       - _field1
       - _field2
 
+- payload: is the text to send to Mattermost/Slack. Can be parametrized with '{}'
+- gelf: is an ordered list of fields to extract from GELF messages, each '{}' in the payload will be replaced by the corresponding value
+
 ## Service
-Exemple of systemd unit file
+Exemple of a systemd unit file
 
     [Unit]
     Description=Gelf connector for Mattermost
