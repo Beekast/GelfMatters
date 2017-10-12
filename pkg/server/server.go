@@ -23,7 +23,7 @@ import (
 	"bufio"
 	"net"
 
-	"gitlab.beekast.info/infra/gelfmatters/pkg/protocol"
+	"github.com/Beekast/GelfMatters/pkg/protocol"
 )
 
 

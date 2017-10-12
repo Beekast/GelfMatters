@@ -17,10 +17,10 @@ limitations under the License.
 package main
 
 import (
-	"gitlab.beekast.info/infra/gelfmatters/pkg/mattermost"
-	"gitlab.beekast.info/infra/gelfmatters/pkg/server"
-	"gitlab.beekast.info/infra/gelfmatters/pkg/config"
-	"gitlab.beekast.info/infra/gelfmatters/pkg/protocol"
+	"github.com/Beekast/GelfMatters/pkg/mattermost"
+	"github.com/Beekast/GelfMatters/pkg/server"
+	"github.com/Beekast/GelfMatters/pkg/config"
+	"github.com/Beekast/GelfMatters/pkg/protocol"
 )
 
 
