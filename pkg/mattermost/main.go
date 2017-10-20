@@ -61,7 +61,9 @@ func (m *Mattermost) LoopOnEvents() {
 				fmt.Println(" [!] Error sending msg to mattermost:", err.Error())
 				fmt.Println(" [!] Where trying to send:", payload)
 			}
-			resp.Body.Close()
+			if resp != nil {
+				resp.Body.Close()
+			}
 		}
 	}()
 }
